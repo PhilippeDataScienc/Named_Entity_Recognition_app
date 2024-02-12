@@ -21,7 +21,7 @@ class TestNerClient(unittest.TestCase):
         ents = ner.get_ents("Paris is a city in France")
         self.assertIsInstance(ents, dict)
 
-    def text_get_ents_given_spacy_PERSON_is_returned_serializes_to_Person(self):
+    def test_get_ents_given_spacy_PERSON_is_returned_serializes_to_Person(self):
         model = NerModelTestDouble('eng')
         doc_ents = [{'text': 'Laurent Fressinet', 'label_': 'PERSON'}]
         model.returns_doc_ents(doc_ents)
